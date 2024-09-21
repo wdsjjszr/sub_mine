@@ -1,4 +1,5 @@
 #自定义规则
+#用于直连的域名规则
 DOMAIN-SUFFIX,api.steampowered.com
 DOMAIN-SUFFIX,*.cm.steampowered.com
 DOMAIN-SUFFIX,*.steamserver.net
