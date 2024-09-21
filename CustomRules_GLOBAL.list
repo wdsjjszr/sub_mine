@@ -1,4 +1,5 @@
 #自定义规则
+#用于代理的规则
 DOMAIN-SUFFIX,beatsaver.com
 DOMAIN-SUFFIX,beatmods.com
 DOMAIN-SUFFIX,scoresaber.com
