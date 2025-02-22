@@ -24,7 +24,7 @@ DOMAIN-SUFFIX,coo.wiki
 DOMAIN-SUFFIX,zh.zlibrary-asia.se
 DOMAIN-SUFFIX,vrchat.cloud
 #- DOMAIN-SUFFIX,api.steampowered.com
-DOMAIN-SUFFIX,yunzhongzhuan.com
+# DOMAIN-SUFFIX,yunzhongzhuan.com
 DOMAIN-SUFFIX,south-plus.net
 DOMAIN-SUFFIX,sixyin.com
 DOMAIN-SUFFIX,polymarket.com
