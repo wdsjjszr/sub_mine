@@ -2,7 +2,9 @@
 #用于直连的域名规则
 
 DOMAIN-SUFFIX,*.cm.steampowered.com
+DOMAIN-SUFFIX,cm.steampowered.com
 DOMAIN-SUFFIX,*.steamserver.net
+DOMAIN-SUFFIX,steamserver.net
 IP-CIDR,45.121.184.0/24
 IP-CIDR,103.10.124.0/23
 IP-CIDR,103.28.54.0/24
@@ -27,17 +29,18 @@ IP-CIDR,208.64.200.0/22
 IP-CIDR,208.78.164.0/22
 IP-CIDR,205.185.194.0/24
 
+DOMAIN,dcg.microsoft.com
 DOMAIN-SUFFIX,modelsaber.wgzeyu.vip
 #DOMAIN-SUFFIX,yunzhongzhuan.com
 DOMAIN-SUFFIX,bs.wgzeyu.com
 DOMAIN-SUFFIX,krakenfiles.com
 DOMAIN-SUFFIX,api.oxycontin.cc
 DOMAIN-SUFFIX,jm18c-zxc.net
-DOMAIN,dcg.microsoft.com
 
 #放行服务器 IP: 
 IP-CIDR,123.207.255.163/32,DIRECT
 #放行 N2N 虚拟网段:
 IP-CIDR,10.173.188.0/24,DIRECT
+
 
 
