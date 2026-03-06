@@ -33,6 +33,7 @@ DOMAIN-SUFFIX,bs.wgzeyu.com
 DOMAIN-SUFFIX,krakenfiles.com
 DOMAIN-SUFFIX,api.oxycontin.cc
 DOMAIN-SUFFIX,jm18c-zxc.net
+DOMAIN-SUFFIX,dcg.microsoft.com
 
 #放行服务器 IP: 
 IP-CIDR,123.207.255.163/32,DIRECT
