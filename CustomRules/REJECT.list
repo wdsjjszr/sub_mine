@@ -2,4 +2,3 @@
 #用于拒绝连接的规则
 #DOMAIN-KEYWORD,adobe
 #DOMAIN-SUFFIX,internetdownloadmanager.com
-#测试
