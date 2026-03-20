@@ -1,0 +1,65 @@
+name: Auto Convert List to YAML
+
+# 触发条件：当主分支的 .list 文件有修改时，或者手动点击运行
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**/*.list'
+  workflow_dispatch:
+
+jobs:
+  convert-rules:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. 把你的代码仓库拉取到机器人的工作空间
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. 配置 Python 环境 (用于处理文本转换)
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      # 3. 核心转换逻辑：遍历所有 .list 加上 payload: 并保存为 .yaml
+      - name: Convert .list to .yaml
+        run: |
+          python -c "
+          import os, glob
+          # 找到仓库里所有的 .list 文件
+          for filepath in glob.glob('**/*.list', recursive=True):
+              yaml_path = filepath.rsplit('.', 1)[0] + '.yaml'
+              with open(filepath, 'r', encoding='utf-8') as f:
+                  lines = f.readlines()
+              
+              valid_lines = []
+              for line in lines:
+                  line = line.strip()
+                  # 过滤天空白行和注释行
+                  if line and not line.startswith('#') and not line.startswith('//'):
+                      valid_lines.append(f\"  - '{line}'\")
+              
+              if valid_lines:
+                  with open(yaml_path, 'w', encoding='utf-8') as f:
+                      f.write('payload:\n')
+                      f.write('\n'.join(valid_lines))
+                      f.write('\n')
+                  print(f'Converted {filepath} to {yaml_path}')
+          "
+
+      # 4. 把生成好的 .yaml 文件提交并推送到你的仓库
+      - name: Commit and Push changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add **/*.yaml
+          
+          # 检查是否有文件变动，如果有则提交
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "🤖 Auto-convert .list to .yaml [skip ci]"
+            git push
+          fi
