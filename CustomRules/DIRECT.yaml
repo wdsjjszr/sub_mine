@@ -34,3 +34,5 @@ payload:
   - 'DOMAIN-SUFFIX,jm18c-zxc.net'
   - 'IP-CIDR,123.207.255.163/32'
   - 'IP-CIDR,10.173.188.0/24'
+  - 'IP-CIDR,140.83.84.34/32'
+  - 'DOMAIN-SUFFIX,*.350114.xyz'
